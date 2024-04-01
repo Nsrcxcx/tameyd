@@ -1,0 +1,144 @@
+import time
+import random
+import turtle
+
+
+def decrypt_clue(text):
+    i = 0
+    list1 = []
+    for i in keywords:
+        if i in text:
+            list1.append(i)
+    return list1
+
+
+keywords = ["False", "await", "else", "import", "pass", "None", "break", "except", "in", "raise", "True", "class", "finally", "is", "return", "and",
+            "continue", "for", "lambda", "try", "as", "def", "from", "nonlocal", "while", "assert", "del", "global", "not", "with", "async", "elif", "if", "or", "yield"]
+
+txt = "ThereareyouIandletlistintgameJupiterlinedefblindasyieldassertbreakclasscontinueexceptfinallyforfromglobalimportnonlocalpassraisereturntrywhilewithandorasassertbreakclasscontinuedefdelelifelseexceptexecfinallyforfromglobalifimportinislambdnonlocalnotorpassprintraisereprreturnsupertrywhilewithyieldTrueFalseNoneasyncawaitmatchcasenonelocaloverrideprivatesealedstaticmethodvolatileabstractenumintfloatdoublebyteboolcharstructvectorlistdictionaryqueuestackinterfacenulltrycatchfinallythrowthrowsimplementsextendspublicprotectedprivatefinalstaticvoidmainStringargsSystemoutprintlnnewMapSetGetAddRemoveClearIsEmptySizeContainsKeyContainsValueKeyValuePairsForEachDoWhileSwitchCaseDefaultbreakcontinueiteratoriterablecollectionsframeworksynchronizedtransientvolatilestrictfpbitwiselogicalshiftcompoundassignmenttypeinferencegenericswildcardstypeerasurereflectionproxydecoratorfactorysingletonprototypebuildercompositeadapterbridgechainofresponsibilitycommandstateobservermementointerpreteriteratorvisitorstrategytemplatemethodflyweightmediatorproxymultithreadingconcurrencyasynchronousprogrammingeventdrivenarchitecturefunctionalprogrammingimmutablesquantumcomputingqubitsentanglementsuperpositionquantumalgorithmsShorsGroverquantumcryptographyquantumteleportationartificialintelligenceAIoptimizationalgorithmsgraphtheorytraversalsearchalgorithmsdepthfirstsearchbreadthfirstsearchAstaralgorithmgeneticalgorithmssimulatedannealingparticlewarmoptimizationantcolonyoptimizationmachinelearningdeeplearningunsupervisedlearningreinforcementlearningneuralnetworksconvolutionalneuralnetworksrecurrentneuralnetworkslongshorttermmemorynetworksgenerativeadversarblockchaintechnologydistributedledgerconsensusalgorithmsproofOfWorkproofOfStakeByzantineFaultTolerancepeer-to-peerP2PnetworkscryptographyhashfunctionsasymmetricencryptionpublickeyinfrastructurePKIdigitalcertificatesdigital signaturesmartcontractsdecentralizedapplicationsDAppsEthereumplatformSolidityprogramminglanguageWeb3technologyNFTsnon-fungibletokensDeFidecentralizedfinancedecentralizedexchangesDEXsstablecoinscryptocurrencyminingstakingyieldfarmingliquiditypoolsoraclesDAOsdecentralizedautonomousorganizati"
+
+list1 = decrypt_clue(txt)
+print(decrypt_clue(txt))
+
+
+print("------------------------------------------")
+
+
+def solve_puzzles(puzzle):
+    x = 0
+    list2 = []
+    for i in puzzle:
+        list2.append(bool(puzzle[x]))
+        x += 1
+    print(list2)
+    return list2
+
+
+puzzle = ['Fali', 1233, 0, "", [], {}, 'False', '0', 'None', None, -1, [1, 2, 3], {'key': 'value'}, True, ' ', '[]', '[1, 2, 3]', '{}',
+          "{'a': 1}", 'True', 'ali', '1234', 1, 0.1, -0.1, True, ' ', '[]', '[1, 2, 3]', '{}', "{'a': 1}", 'True', 'ali', '1234', 1, 0.1, -0.1]
+
+
+solve_puzzles(puzzle)
+list2 = puzzle
+
+
+print("------------------------------------------")
+
+
+def calculate_magic_numbers(start, end):
+    magic_numlist = []
+    for p in range(magicCount):
+        x = float(input("enter number between 0 , 1 : "))
+        num = x*(end-start) + start
+
+        magic_numlist.append(num)
+
+        print(magic_numlist)
+    return magic_numlist
+
+
+start = int(input("enter lower number : "))
+end = int(input("enter higher number : "))
+magicCount = int(input("how many magic number do you want ?"))
+
+list3 = calculate_magic_numbers(start, end)
+
+
+print("------------------------------------------")
+
+
+def binary_to_decimal(binary):
+    decimal = int(binary, 2)
+    return decimal
+
+
+start_time = time.time()
+correctc = 0
+wrongc = 0
+list4 = []
+
+while (time.time() - start_time) <= 20:
+    binary = bin(random.randint(0, 15))[2:].zfill(4)
+    decimal = binary_to_decimal(binary)
+    print(binary)
+
+    user_answer = input("Enter the decimal answer : ")
+    list4.append(user_answer)
+
+    if int(user_answer) == decimal:
+        print("correct")
+        correctc += 1
+    else:
+        print("wrong")
+        wrongc += 1
+
+print(f"Time's up! correct answers: {correctc}, wrong answers: {wrongc}")
+
+print("------------------------------------------")
+
+
+def check_pass():
+    m = 1
+    while m <= num1:
+        if len(info_list[m]) >= 8:
+            if any(char.isupper() for char in info_list[m]):
+                if any(char.islower() for char in info_list[m]):
+                    if any(char.isalpha() for char in info_list[m]):
+                        print(f"eligible accounts : {info_list[m-1]}")
+                        m += 2
+                    else:
+                        m += 2
+                else:
+                    m += 2
+            else:
+                m += 2
+        else:
+            m += 2
+
+
+info_list = []
+num1 = int(input("enter number of account : "))
+
+for x in range(num1):
+    name = input("enter username : ")
+    info_list.append(name)
+    psword = input("enter password :")
+    info_list.append(psword)
+
+check_pass()
+
+print("------------------------------------------")
+
+t = turtle.Turtle()
+t.write("لاترجی", font=("Arial", 100, "bold"))
+turtle.done()
+
+print("------------------------------------------")
+
+
+def unlock_vault(list1, list2, list3, list4, list5):
+    passw = str(list1[0][0]) + str(list2[0][0]) + str(int(list3[0])) + str(list4[0][0]) + str(list5[0][0])
+    print(f"The password is : {passw}")
+
+
+unlock_vault(list1, list2, list3, list4, info_list)
